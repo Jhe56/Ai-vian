@@ -5,7 +5,6 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "hatchling>=1.32.4",
     "kagglehub>=1.0.2",
     "pandas>=3.0.6",
     "seaborn>=0.13.2",

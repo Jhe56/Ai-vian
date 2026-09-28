@@ -5,6 +5,15 @@ build/
 dist/
 wheels/
 *.egg-info
+
+# Private/Sensitive
+*.env
+*.ipynb_checkpoints/*
+*/data*
+
+# Assignment related dataset evaluation and update
 *update*
+
+
 # Virtual environments
 .venv
