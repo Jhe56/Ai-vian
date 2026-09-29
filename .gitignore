@@ -9,7 +9,7 @@ wheels/
 # Private/Sensitive
 *.env
 *.ipynb_checkpoints/*
-*/data*
+/data
 
 # Virtual environments
 .venv
