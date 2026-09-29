@@ -11,9 +11,5 @@ wheels/
 *.ipynb_checkpoints/*
 */data*
 
-# Assignment related dataset evaluation and update
-*update*
-
-
 # Virtual environments
 .venv
