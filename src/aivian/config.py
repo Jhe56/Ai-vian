@@ -1,8 +1,6 @@
 """Central configuration for the Ai-vian project.
 
-Keeping the dataset reference here (instead of inline in notebooks/scripts)
-means there is exactly one place to look when the dataset moves, gets a new
-version, or the storage location changes between machines.
+Keeping the dataset reference here, as well as defining default dataset and csv names
 """
 
 from __future__ import annotations
@@ -13,7 +11,21 @@ from pathlib import Path
 # --- Dataset reference -----------------------------------------------------
 # Kaggle dataset slug in "<owner>/<dataset>" form. This is the single source
 # of truth for which dataset the project uses.
-DATASET_SLUG = "rohanrao/xeno-canto-bird-recordings-extended-a-m"
+DATASETS = {
+    "A-M" : "rohanrao/xeno-canto-bird-recordings-extended-a-m",
+    "N-Z" : "rohanrao/xeno-canto-bird-recordings-extended-n-z",
+    "CA-NV-USA" : "samhiatt/xenocanto-avian-vocalizations-canv-usa",
+    "EU" : "monogenea/birdsongs-from-europe",
+} 
+
+DEFAULT_DATASET = "A-M"
+
+CSV_NAMES = {
+    "A-M" : "train_extended.csv",
+    "N-Z" : "train_extended.csv",
+    "CA-NV-USA" : "xeno-canto_ca-nv_index.csv",
+    "EU" : "metadata.csv",
+}
 
 # --- Storage location --------------------------------------------------
 # kagglehub caches downloads under ~/.cache/kagglehub by default, which is
