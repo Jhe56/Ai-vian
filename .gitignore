@@ -6,6 +6,9 @@ dist/
 wheels/
 *.egg-info
 
+# Updates/Unecessary for public viewing
+*Update*
+
 # Private/Sensitive
 *.env
 *.ipynb_checkpoints/*
