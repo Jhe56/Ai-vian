@@ -11,9 +11,6 @@ wheels/
 *.ipynb_checkpoints/*
 /data
 
-# Updates/Presentation Material
-*Update*
-
 # Virtual environments
 .venv
 
