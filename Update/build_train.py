@@ -17,6 +17,7 @@ class Train_DF():
         self.sf_sac_filter()
         self.min_50_trim()
         self.add_paths()
+        self.add_embeddings
 
         return self.embed_df
 
