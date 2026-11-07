@@ -1,5 +1,8 @@
 import librosa
+import numpy as np
 import pandas as pd
+import tensorflow as tf
+import kagglehub
 from Update.clean_df import AZ_DF
 from Update.data import get_dataset_path
 
@@ -18,7 +21,7 @@ class Train_DF():
         return self.embed_df
 
     def save_embedding_as_pickle(self, pkl_name="./embed_df.pkl"):
-        self.embed_df.to_pickle(pkl_name)
+        self.embed_df.to_pickle(pkl_name) #saves pickle to local dir
 
     def get_embedding_from_pickle(self, pkl_name="./embed_df.pkl"):
         self.embed_df = pd.read_pickle(pkl_name)  #loads pickle from local dir
@@ -64,5 +67,14 @@ class Train_DF():
     def add_paths(self):
         self.embed_df['recording_path'] = self.embed_df.apply(self.get_path, axis=1)
 
+    def get_embedding(self, yamnet_model, row):
+
+        waveform, _ = librosa.load(row['recording_path'], sr=16000, mono=True)
+        _, embedding, _ = yamnet_model(waveform)
+        return embedding.numpy()
+
     def add_embeddings(self):
-        pass
+        yamnet_path = kagglehub.model_download("google/yamnet/tensorFlow2/yamnet")
+        yamnet = tf.saved_model.load(yamnet_path)
+        
+        self.embed_df['embedding'] = self.embed_df.apply(lambda row: self.get_embedding(yamnet, row), axis=1)
