@@ -7,7 +7,7 @@ wheels/
 *.egg-info
 
 # Updates/Unecessary for public viewing
-*Update*
+*Update_*
 
 # Private/Sensitive
 *.env
