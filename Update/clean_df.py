@@ -1,5 +1,5 @@
 from __future__ import annotations
-from Update.data import get_csv_paths
+from data import get_csv_paths
 import pandas as pd
 import numpy as np
 import re

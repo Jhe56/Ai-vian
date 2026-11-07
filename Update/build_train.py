@@ -1,10 +1,9 @@
 import librosa
-import numpy as np
 import pandas as pd
 import tensorflow as tf
 import kagglehub
-from Update.clean_df import AZ_DF
-from Update.data import get_dataset_path
+from clean_df import AZ_DF
+from data import get_dataset_path
 
 class Train_DF():
     def __init__(self):
@@ -17,7 +16,7 @@ class Train_DF():
         self.sf_sac_filter()
         self.min_50_trim()
         self.add_paths()
-        self.add_embeddings
+        self.add_embeddings()
 
         return self.embed_df
 

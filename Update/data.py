@@ -3,7 +3,7 @@ import os
 from pathlib import Path
 
 
-from .config import DATASETS, DEFAULT_DATASET, CSV_NAMES, resolve_cache_dir
+from config import DATASETS, DEFAULT_DATASET, CSV_NAMES, resolve_cache_dir
  
  
 def _running_on_kaggle() -> bool:
