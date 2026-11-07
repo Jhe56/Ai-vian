@@ -17,11 +17,11 @@ class Train_DF():
 
         return self.embed_df
 
-    def save_embedding_as_pickle(self):
-        self.embed_df.to_pickle("./embed_df.pkl")
+    def save_embedding_as_pickle(self, pkl_name="./embed_df.pkl"):
+        self.embed_df.to_pickle(pkl_name)
 
-    def get_embedding_from_pickle(self):
-        self.embed_df = pd.read_pickle("./embed_df.pkl")  #loads pickle from local dir
+    def get_embedding_from_pickle(self, pkl_name="./embed_df.pkl"):
+        self.embed_df = pd.read_pickle(pkl_name)  #loads pickle from local dir
 
     def sf_sac_filter(self):
         df = self.az_df
